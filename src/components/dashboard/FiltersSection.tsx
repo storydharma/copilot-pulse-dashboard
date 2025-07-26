@@ -1,7 +1,10 @@
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent } from "@/components/ui/card";
+import { useDashboard } from "@/contexts/DashboardContext";
 
 export const FiltersSection = () => {
+  const { updateFilter } = useDashboard();
+
   return (
     <Card className="card-glow">
       <CardContent className="p-6">
@@ -10,7 +13,7 @@ export const FiltersSection = () => {
             <label className="text-sm font-medium text-muted-foreground mb-2 block">
               Archetype
             </label>
-            <Select>
+            <Select onValueChange={(value) => updateFilter('archetype', value)}>
               <SelectTrigger>
                 <SelectValue placeholder="All Archetypes" />
               </SelectTrigger>
@@ -28,7 +31,7 @@ export const FiltersSection = () => {
             <label className="text-sm font-medium text-muted-foreground mb-2 block">
               Business Unit
             </label>
-            <Select>
+            <Select onValueChange={(value) => updateFilter('businessUnit', value)}>
               <SelectTrigger>
                 <SelectValue placeholder="All BUs" />
               </SelectTrigger>
@@ -43,7 +46,7 @@ export const FiltersSection = () => {
             <label className="text-sm font-medium text-muted-foreground mb-2 block">
               Products
             </label>
-            <Select>
+            <Select onValueChange={(value) => updateFilter('products', value)}>
               <SelectTrigger>
                 <SelectValue placeholder="FIS Products" />
               </SelectTrigger>
@@ -59,7 +62,7 @@ export const FiltersSection = () => {
             <label className="text-sm font-medium text-muted-foreground mb-2 block">
               Projects
             </label>
-            <Select>
+            <Select onValueChange={(value) => updateFilter('projects', value)}>
               <SelectTrigger>
                 <SelectValue placeholder="All Projects" />
               </SelectTrigger>
@@ -74,7 +77,7 @@ export const FiltersSection = () => {
             <label className="text-sm font-medium text-muted-foreground mb-2 block">
               Customers
             </label>
-            <Select>
+            <Select onValueChange={(value) => updateFilter('customers', value)}>
               <SelectTrigger>
                 <SelectValue placeholder="All Customers" />
               </SelectTrigger>

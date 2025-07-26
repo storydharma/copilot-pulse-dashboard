@@ -1,24 +1,26 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useDashboard } from "@/contexts/DashboardContext";
 
 export const ProductivitySection = () => {
+  const { data } = useDashboard();
   const productivityMetrics = [
     { 
       title: "Time Saved", 
-      value: "45%", 
+      value: `${data.productivityMetrics.timeSaved}%`, 
       description: "Average time reduction per task",
       trend: "+8%",
       detail: "2.4 hours/day per user"
     },
     { 
       title: "Task Completion Speed", 
-      value: "60%", 
+      value: `${data.productivityMetrics.taskSpeed}%`, 
       description: "Faster task completion",
       trend: "+12%",
       detail: "From 4.2h to 1.7h average"
     },
     { 
       title: "Error Reduction", 
-      value: "38%", 
+      value: `${data.productivityMetrics.errorReduction}%`, 
       description: "Fewer errors in outputs",
       trend: "+15%",
       detail: "From 12% to 7.4% error rate"

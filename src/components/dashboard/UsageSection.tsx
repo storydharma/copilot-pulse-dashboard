@@ -1,33 +1,47 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
+import { useDashboard } from "@/contexts/DashboardContext";
+import { formatNumber } from "@/contexts/DashboardContext";
 
 export const UsageSection = () => {
+  const { data } = useDashboard();
+  
   const usageStats = [
-    { title: "Daily Active Users", value: "12.4K", change: "+14%", lastYear: "10.9K" },
-    { title: "Avg Session Frequency", value: "8.2/day", change: "+12%", lastYear: "7.3/day" },
-    { title: "Avg Session Length", value: "24min", change: "+18%", lastYear: "20min" },
-    { title: "Total Interactions", value: "156K", change: "+22%", lastYear: "128K" }
+    { 
+      title: "Daily Active Users", 
+      value: formatNumber(data.usageStats.dailyActiveUsers), 
+      change: "+14%", 
+      lastYear: formatNumber(data.usageStats.dailyActiveUsers * 0.88)
+    },
+    { 
+      title: "Avg Session Frequency", 
+      value: `${data.usageStats.sessionFrequency}/day`, 
+      change: "+12%", 
+      lastYear: `${(data.usageStats.sessionFrequency * 0.89).toFixed(1)}/day`
+    },
+    { 
+      title: "Avg Session Length", 
+      value: `${data.usageStats.sessionLength}min`, 
+      change: "+18%", 
+      lastYear: `${Math.round(data.usageStats.sessionLength * 0.83)}min`
+    },
+    { 
+      title: "Total Interactions", 
+      value: formatNumber(data.usageStats.totalInteractions), 
+      change: "+22%", 
+      lastYear: formatNumber(data.usageStats.totalInteractions * 0.82)
+    }
   ];
 
-  const productUsage = [
-    { product: "Word", usage: 85, users: "8.2K" },
-    { product: "Excel", usage: 72, users: "6.8K" },
-    { product: "Outlook", usage: 68, users: "6.1K" },
-    { product: "Teams", usage: 64, users: "5.9K" },
-    { product: "OneNote", usage: 45, users: "4.2K" },
-    { product: "Co-Pilot Agents", usage: 38, users: "3.8K" },
-    { product: "Whiteboard", usage: 28, users: "2.9K" }
-  ];
+  const productUsage = data.productUsage.map(item => ({
+    ...item,
+    users: formatNumber(item.users)
+  }));
 
-  const topUseCases = [
-    { useCase: "Requirements Summary", count: "2.8K", percentage: 18 },
-    { useCase: "User Story Generation", count: "2.4K", percentage: 15 },
-    { useCase: "Test Scenario Generation", count: "2.1K", percentage: 13 },
-    { useCase: "Design Document Generation", count: "1.9K", percentage: 12 },
-    { useCase: "Configuration Summary", count: "1.7K", percentage: 11 },
-    { useCase: "Release Checklists", count: "1.5K", percentage: 10 },
-    { useCase: "Data Generation", count: "1.3K", percentage: 8 }
-  ];
+  const topUseCases = data.useCases.map(item => ({
+    ...item,
+    count: formatNumber(item.count)
+  }));
 
   return (
     <div className="space-y-6">
