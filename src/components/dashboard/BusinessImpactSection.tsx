@@ -22,9 +22,9 @@ export const BusinessImpactSection = () => {
     { 
       title: "Utilization %", 
       value: `${data.businessMetrics.userSatisfaction * 10}%`, 
-      description: "Average utilization rate",
+      description: "Resource utilization rate",
       trend: "+12%",
-      detail: "Active usage across teams"
+      detail: "Computing resources efficiency"
     }
   ];
 
