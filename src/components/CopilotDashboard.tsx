@@ -111,7 +111,7 @@ const CopilotDashboard = () => {
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-4xl font-bold text-foreground mb-2">
-                Welcome back, Trey Small
+                Welcome back, Admin User
               </h1>
               <p className="text-muted-foreground">
                 Here's your Co-pilot adoption overview
