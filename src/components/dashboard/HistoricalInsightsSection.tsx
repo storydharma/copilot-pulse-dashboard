@@ -4,6 +4,7 @@ import { FileText, Settings, Ticket, FileCheck } from "lucide-react";
 import { useDashboard } from "@/contexts/DashboardContext";
 
 export const HistoricalInsightsSection = () => {
+  console.log("HistoricalInsightsSection rendering");
   const { data } = useDashboard();
 
   const documentTypes = [
