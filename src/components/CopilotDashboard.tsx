@@ -4,6 +4,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { UsageSection } from "./dashboard/UsageSection";
 import { ProductivitySection } from "./dashboard/ProductivitySection";
 import { BusinessImpactSection } from "./dashboard/BusinessImpactSection";
+import { HistoricalInsightsSection } from "./dashboard/HistoricalInsightsSection";
 import { FiltersSection } from "./dashboard/FiltersSection";
 import { DashboardProvider } from "@/contexts/DashboardContext";
 
@@ -42,6 +43,9 @@ const CopilotDashboard = () => {
 
           {/* Usage Section */}
           <UsageSection />
+
+          {/* Historical Insights Section */}
+          <HistoricalInsightsSection />
 
           {/* Productivity Section */}
           <ProductivitySection />
