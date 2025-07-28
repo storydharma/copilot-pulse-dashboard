@@ -54,8 +54,6 @@ export const FiltersSection = () => {
                 <SelectItem value="all">All Fintech Products</SelectItem>
                 <SelectItem value="treasury-management">Treasury Management</SelectItem>
                 <SelectItem value="digital-one">Digital One</SelectItem>
-                <SelectItem value="product1">Product 1</SelectItem>
-                <SelectItem value="product2">Product 2</SelectItem>
               </SelectContent>
             </Select>
           </div>
