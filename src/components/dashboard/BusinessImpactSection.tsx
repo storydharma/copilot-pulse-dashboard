@@ -20,11 +20,11 @@ export const BusinessImpactSection = () => {
       detail: "Investment payback in 4.2 months"
     },
     { 
-      title: "User Satisfaction", 
-      value: `${data.businessMetrics.userSatisfaction}/10`, 
-      description: "Average satisfaction score",
+      title: "Utilization %", 
+      value: `${data.businessMetrics.userSatisfaction * 10}%`, 
+      description: "Average utilization rate",
       trend: "+12%",
-      detail: "92% would recommend Co-pilot"
+      detail: "Active usage across teams"
     }
   ];
 
