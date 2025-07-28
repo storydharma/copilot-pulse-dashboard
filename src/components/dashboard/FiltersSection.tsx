@@ -48,10 +48,10 @@ export const FiltersSection = () => {
             </label>
             <Select onValueChange={(value) => updateFilter('products', value)}>
               <SelectTrigger>
-                <SelectValue placeholder="FIS Products" />
+                <SelectValue placeholder="Fintech Products" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="all">All FIS Products</SelectItem>
+                <SelectItem value="all">All Fintech Products</SelectItem>
                 <SelectItem value="product1">Product 1</SelectItem>
                 <SelectItem value="product2">Product 2</SelectItem>
               </SelectContent>
